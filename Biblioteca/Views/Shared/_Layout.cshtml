@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Biblioteca </title>
+    @Styles.Render("~/Content/Site.css")
+</head>
+<body>
+    <div>
+        <div >
+            <div>
+                
+            </div>
+            <div>
+                <ul id="menu">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Cadastro de Livro", "Index", "Livros")</li>
+                    <li>@Html.ActionLink("Cadastro de Autor", "Index", "Autores")</li>
+                    <li>@Html.ActionLink("Cadastro de Assunto", "Index", "Assuntos")</li>
+                    <li>@Html.ActionLink("Relatório", "ListarLivros", "Relatorios")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        @RenderBody()
+        <hr />
+    </div>
+
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @RenderSection("scripts", required: false)
+</body>
+</html>

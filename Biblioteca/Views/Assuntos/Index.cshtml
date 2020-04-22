@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Biblioteca.Models.Assunto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Assunto</h2>
+
+<p>
+    @Html.ActionLink("Novo Assunto", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th>
+            @Html.Label("Ações")
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CodAs }) |
+            @Html.ActionLink("Read", "Details", new { id=item.CodAs }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CodAs })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,97 @@
+﻿@model Biblioteca.Models.Livro
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Alterar Livro</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Cod)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Titulo, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Titulo, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Titulo, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Editora, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Editora, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Editora, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Edicao, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Edicao, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Edicao, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.AnoPublicacao, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.AnoPublicacao, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.AnoPublicacao, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Assuntos")
+        <div class="col-md-10">
+            @{
+                foreach (var assunto in ViewBag.Assuntos)
+                {
+                    <input type="checkbox"
+                           name="assuntosSelecionados"
+                           value="@assunto.CodAs"
+                           @(Html.Raw(assunto.Selecionado ? "checked=\"checked\"" : "")) />
+                    @:  @assunto.Descricao
+                }
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Autores")
+        <div class="col-md-10">
+            @{
+                foreach (var autor in ViewBag.Autores)
+                {
+                    <input type="checkbox"
+                           name="autoresSelecionados"
+                           value="@autor.CodAu"
+                           @(Html.Raw(autor.Selecionado ? "checked=\"checked\"" : "")) />
+                    @:  @autor.Nome
+                }
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Alterar" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+    }
+
+<div>
+    @Html.ActionLink("Voltar", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
