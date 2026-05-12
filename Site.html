@@ -1,0 +1,221 @@
+
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --brand:#1a1a2e;
+    --accent:#c8a96e;
+    --accent2:#e8d5b0;
+    --bg:#faf9f7;
+    --card:#ffffff;
+    --text:#1a1a2e;
+    --muted:#6b6b7a;
+    --border:#e8e4dc;
+  }
+  body{background:var(--bg);font-family:'DM Sans',sans-serif;color:var(--text)}
+  .hero{background:var(--brand);padding:3.5rem 2rem 2.5rem;text-align:center;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(200,169,110,0.2)}
+  .hero::after{content:'';position:absolute;bottom:-40px;left:-40px;width:140px;height:140px;border-radius:50%;border:1px solid rgba(200,169,110,0.15)}
+  .avatar{width:72px;height:72px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:500;color:var(--brand);margin:0 auto 1.25rem;letter-spacing:1px;font-family:'DM Sans',sans-serif}
+  .hero h1{font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:#fff;margin-bottom:6px;letter-spacing:0.3px}
+  .hero p.tagline{font-size:13px;color:var(--accent2);letter-spacing:2px;text-transform:uppercase;font-weight:300;margin-bottom:1.5rem}
+  .hero p.bio{font-size:14px;color:rgba(255,255,255,0.7);max-width:480px;margin:0 auto 1.75rem;line-height:1.8}
+  .badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .badge{background:rgba(200,169,110,0.15);border:1px solid rgba(200,169,110,0.3);color:var(--accent2);font-size:11px;padding:5px 14px;border-radius:20px;letter-spacing:0.5px}
+  .cta-area{display:flex;gap:10px;justify-content:center;margin-top:1.75rem}
+  .btn-primary{background:var(--accent);color:var(--brand);border:none;padding:10px 22px;border-radius:6px;font-size:13px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif}
+  .btn-secondary{background:transparent;color:var(--accent2);border:1px solid rgba(200,169,110,0.4);padding:10px 22px;border-radius:6px;font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif}
+  section{padding:2rem 1.5rem}
+  .section-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:0.5rem}
+  .section-title{font-family:'Playfair Display',serif;font-size:20px;color:var(--text);margin-bottom:1.5rem}
+  .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:2rem}
+  .stat{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1rem;text-align:center}
+  .stat-num{font-family:'Playfair Display',serif;font-size:26px;color:var(--accent);font-weight:600}
+  .stat-label{font-size:11px;color:var(--muted);margin-top:4px;letter-spacing:0.3px}
+  .projects-grid{display:grid;gap:16px}
+  .project-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer;transition:transform 0.2s}
+  .project-card:hover{transform:translateY(-2px)}
+  .project-img{height:130px;display:flex;align-items:center;justify-content:center;font-size:42px;position:relative;overflow:hidden}
+  .project-img.resto{background:linear-gradient(135deg,#2d1b0e,#5c3217)}
+  .project-img.beleza{background:linear-gradient(135deg,#1a0a2e,#4a1568)}
+  .project-img.tech{background:linear-gradient(135deg,#0a1628,#1e3a5f)}
+  .project-img.fitness{background:linear-gradient(135deg,#0d2414,#1a5c2e)}
+  .proj-label{position:absolute;top:10px;right:10px;background:rgba(255,255,255,0.15);color:#fff;font-size:10px;padding:3px 10px;border-radius:20px;letter-spacing:0.5px}
+  .project-body{padding:1rem}
+  .project-body h3{font-size:15px;font-weight:500;margin-bottom:4px}
+  .project-body p{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:10px}
+  .proj-tags{display:flex;flex-wrap:wrap;gap:6px}
+  .proj-tag{background:#f0ede7;color:var(--muted);font-size:10px;padding:3px 10px;border-radius:20px}
+  .process{display:grid;gap:12px}
+  .step{display:flex;gap:14px;align-items:flex-start;padding:1rem;background:var(--card);border:1px solid var(--border);border-radius:10px}
+  .step-num{min-width:32px;height:32px;border-radius:50%;background:var(--brand);color:var(--accent);font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif}
+  .step-content h4{font-size:13px;font-weight:500;margin-bottom:3px}
+  .step-content p{font-size:12px;color:var(--muted);line-height:1.6}
+  .pricing-grid{display:grid;gap:12px}
+  .plan{border:1px solid var(--border);border-radius:12px;padding:1.25rem;background:var(--card)}
+  .plan.featured{border-color:var(--accent);background:#fffdf8}
+  .plan-badge{display:inline-block;background:var(--accent);color:var(--brand);font-size:10px;padding:3px 12px;border-radius:20px;margin-bottom:10px;letter-spacing:0.5px}
+  .plan-name{font-size:16px;font-weight:500;margin-bottom:4px}
+  .plan-price{font-family:'Playfair Display',serif;font-size:28px;color:var(--accent);font-weight:600}
+  .plan-price span{font-size:13px;font-family:'DM Sans',sans-serif;color:var(--muted)}
+  .plan-desc{font-size:12px;color:var(--muted);margin:8px 0 12px;line-height:1.6}
+  .plan-items{list-style:none;display:flex;flex-direction:column;gap:6px}
+  .plan-items li{font-size:12px;color:var(--text);display:flex;align-items:center;gap:8px}
+  .plan-items li::before{content:'✓';color:var(--accent);font-weight:600;font-size:12px}
+  .testimonials{display:grid;gap:12px}
+  .testi{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.1rem}
+  .testi-quote{font-size:13px;color:var(--text);line-height:1.8;margin-bottom:10px;font-style:italic}
+  .testi-author{font-size:11px;color:var(--muted);font-weight:500}
+  .contact-box{background:var(--brand);border-radius:14px;padding:2rem;text-align:center}
+  .contact-box h3{font-family:'Playfair Display',serif;font-size:20px;color:#fff;margin-bottom:8px}
+  .contact-box p{font-size:13px;color:rgba(255,255,255,0.6);margin-bottom:1.5rem;line-height:1.7}
+  .contact-items{display:flex;flex-direction:column;gap:10px}
+  .contact-item{display:flex;align-items:center;justify-content:center;gap:10px;background:rgba(255,255,255,0.07);border:1px solid rgba(200,169,110,0.2);border-radius:8px;padding:10px 16px;color:#fff;font-size:13px;cursor:pointer}
+  .contact-icon{color:var(--accent);font-size:16px}
+  .divider{height:1px;background:var(--border);margin:0 1.5rem}
+</style>
+
+<h2 class="sr-only">Portfólio de Rafaela Alves — Criação de Sites para Negócios Locais em Montreal</h2>
+
+<div class="hero">
+  <div class="avatar">RA</div>
+  <h1>Rafaela Alves</h1>
+  <p class="tagline">Criação de Sites · Montreal, Canadá</p>
+  <p class="bio">Crio sites modernos e profissionais para negócios locais em Montreal em até 3 dias — usando as ferramentas mais avançadas de design. Sites em português, inglês e francês.</p>
+  <div class="badges">
+    <span class="badge">Sites em poucos dias</span>
+    <span class="badge">Português · English · Français</span>
+    <span class="badge">Baseada em Montreal</span>
+    <span class="badge">Design Luxo</span>
+  </div>
+  <div class="cta-area">
+    <button class="btn-primary" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Solicitar orçamento</button>
+    <button class="btn-secondary" onclick="document.getElementById('projetos').scrollIntoView({behavior:'smooth'})">Ver projetos</button>
+  </div>
+</div>
+
+<section>
+  <p class="section-label">Resultados</p>
+  <p class="section-title">Por que um bom site faz diferença</p>
+  <div class="stats-grid">
+    <div class="stat">
+      <div class="stat-num">3 dias</div>
+      <div class="stat-label">Entrega média</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">3×</div>
+      <div class="stat-label">Mais contatos via Google</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Mobile responsivo</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="projetos">
+  <p class="section-label">Portfólio</p>
+  <p class="section-title">Projetos recentes</p>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-img resto">
+        <span style="font-size:48px">🍽️</span>
+        <span class="proj-label">Restaurante</span>
+      </div>
+      <div class="project-body">
+        <h3>Comidas do Brasil — Restaurante</h3>
+        <p>Site com cardápio digital, galeria de fotos, localização e botão de reserva direto pelo WhatsApp. Entregue em 36 horas.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Cardápio online</span>
+          <span class="proj-tag">WhatsApp</span>
+          <span class="proj-tag">Google Maps</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <p class="section-label">Como funciona</p>
+  <p class="section-title">Processo simples, resultado rápido</p>
+  <div class="process">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>Conversa de 15 minutos</h4>
+        <p>Me conta sobre o seu negócio, o que precisa e o que quer comunicar. Pode ser pelo WhatsApp mesmo.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>Proposta em até 24h</h4>
+        <p>Envio um rascunho visual com cores, estrutura e conteúdo baseado no seu nicho. Você aprova ou sugere mudanças.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h4>Site no ar em 3 dias</h4>
+        <p>Após aprovação, publico o site com domínio, hospedagem configurada e Google Maps integrado.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h4>Suporte contínuo</h4>
+        <p>Qualquer dúvida ou alteração pequena no primeiro mês é gratuita. Você nunca fica sozinho.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+
+<section>
+  <p class="section-label">Depoimentos</p>
+  <p class="section-title">O que dizem os clientes</p>
+  
+</section>
+
+<div class="divider"></div>
+
+<section id="contato">
+  <div class="contact-box">
+    <h3>Vamos conversar?</h3>
+    <p>Atendo brasileiros e outros imigrantes em Montreal. Entre em contato e receba uma proposta sem compromisso em até 24 horas.</p>
+    <div class="contact-items">
+      <div class="contact-item">
+        <i class="ti ti-brand-whatsapp contact-icon" aria-hidden="true"></i>
+        <span><style>
+  .btn-whatsapp {
+    background-color: #25d366; /* Verde do WhatsApp */
+    color: white;              /* Cor do texto */
+    padding: 10px 20px;        /* Espaçamento interno */
+    text-decoration: none;     /* Remove o sublinhado */
+    border-radius: 5px;        /* Cantos arredondados */
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s;
+  }
+
+  .btn-whatsapp:hover {
+    background-color: #128c7e; /* Cor um pouco mais escura ao passar o mouse */
+  }
+</style>
+
+<a href="https://wa.me/14385285274" class="btn-whatsapp" target="_blank">
+    Fale Conosco no WhatsApp
+</a></span>
+      </div>
+    </div>
+  </div>
+</section>
