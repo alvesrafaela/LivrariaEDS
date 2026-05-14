@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portfolio de Rafaela Alves Studio, criando sites premium, landing pages e presencas digitais para pequenos negocios em Montreal.">
+  <meta name="description" content="Rafaela Alves Studio cria landing pages, sites premium e portfolios para pequenos negocios em Montreal.">
   <title>Rafaela Alves Studio | Portfolio de sites premium</title>
   <link rel="preconnect" href="https://images.unsplash.com">
   <style>
@@ -17,8 +17,6 @@
       --champagne: #f5ead8;
       --sand: #d7c2a1;
       --gold: #c99b57;
-      --rose: #b86b74;
-      --sage: #52635a;
       --muted: #7c7064;
       --line: rgba(36, 26, 20, 0.13);
       --dark-line: rgba(245, 234, 216, 0.18);
@@ -50,6 +48,14 @@
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    [data-lang] {
+      display: none;
+    }
+
+    [data-lang].active {
+      display: inline;
     }
 
     .announcement {
@@ -128,6 +134,34 @@
       font-weight: 900;
       letter-spacing: 0.05em;
       text-transform: uppercase;
+    }
+
+    .nav-actions {
+      align-items: center;
+      display: flex;
+      gap: 10px;
+    }
+
+    .lang-switch {
+      display: flex;
+      gap: 6px;
+    }
+
+    .lang-switch button {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      cursor: pointer;
+      font-family: Inter, Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 900;
+      padding: 9px 10px;
+    }
+
+    .lang-switch button.active {
+      background: var(--noir);
+      color: var(--champagne);
     }
 
     .btn,
@@ -352,8 +386,7 @@
       margin-bottom: 16px;
     }
 
-    .pill,
-    .tag {
+    .pill {
       border: 1px solid rgba(201, 155, 87, 0.38);
       border-radius: 999px;
       color: var(--coffee);
@@ -604,8 +637,15 @@
         justify-content: flex-start;
       }
 
-      .nav-cta {
+      .nav-actions {
+        align-items: stretch;
+        flex-direction: column;
         width: 100%;
+      }
+
+      .lang-switch button,
+      .nav-cta {
+        flex: 1;
       }
 
       .hero {
@@ -640,7 +680,11 @@
   </style>
 </head>
 <body>
-  <div class="announcement">Portfolio de websites premium para pequenos negocios, marcas locais e especialistas</div>
+  <div class="announcement">
+    <span data-lang="pt" class="active">Portfolio de websites premium para pequenos negocios, marcas locais e especialistas</span>
+    <span data-lang="en">Premium website portfolio for small businesses, local brands and specialists</span>
+    <span data-lang="fr">Portfolio de sites web premium pour petites entreprises, marques locales et specialistes</span>
+  </div>
 
   <nav class="nav" aria-label="Navegacao principal">
     <a class="brand" href="#inicio" aria-label="Rafaela Alves Studio">
@@ -652,11 +696,34 @@
     </a>
     <div class="nav-links" aria-label="Secoes do site">
       <a href="#cases">Cases</a>
-      <a href="#servicos">Servicos</a>
-      <a href="#processo">Metodo</a>
-      <a href="#contato">Contato</a>
+      <a href="#servicos">
+        <span data-lang="pt" class="active">Servicos</span>
+        <span data-lang="en">Services</span>
+        <span data-lang="fr">Services</span>
+      </a>
+      <a href="#processo">
+        <span data-lang="pt" class="active">Metodo</span>
+        <span data-lang="en">Method</span>
+        <span data-lang="fr">Methode</span>
+      </a>
+      <a href="#contato">
+        <span data-lang="pt" class="active">Contato</span>
+        <span data-lang="en">Contact</span>
+        <span data-lang="fr">Contact</span>
+      </a>
     </div>
-    <a class="nav-cta" href="https://wa.me/14385285274?text=Oi%20Rafaela%2C%20quero%20falar%20sobre%20um%20site" target="_blank" rel="noopener">Falar comigo</a>
+    <div class="nav-actions">
+      <div class="lang-switch" aria-label="Language selector">
+        <button class="active" type="button" data-set-lang="pt">PT</button>
+        <button type="button" data-set-lang="en">EN</button>
+        <button type="button" data-set-lang="fr">FR</button>
+      </div>
+      <a class="nav-cta" href="https://wa.me/14385285274?text=Oi%20Rafaela%2C%20quero%20falar%20sobre%20um%20site" target="_blank" rel="noopener">
+        <span data-lang="pt" class="active">Falar comigo</span>
+        <span data-lang="en">Contact me</span>
+        <span data-lang="fr">Me contacter</span>
+      </a>
+    </div>
   </nav>
 
   <main id="inicio">
@@ -664,29 +731,65 @@
       <div class="hero-grid">
         <div>
           <p class="eyebrow">Web design portfolio</p>
-          <h1>Sites com estrategia, beleza e acabamento de marca.</h1>
-          <p class="hero-copy">Eu crio landing pages e websites premium para negocios que precisam parecer mais profissionais, vender com mais clareza e transformar visitantes em pedidos de orcamento.</p>
+          <h1>
+            <span data-lang="pt" class="active">Sites com estrategia, beleza e acabamento de marca.</span>
+            <span data-lang="en">Websites with strategy, beauty and brand-level finish.</span>
+            <span data-lang="fr">Des sites web strategiques, beaux et dignes d'une vraie marque.</span>
+          </h1>
+          <p class="hero-copy">
+            <span data-lang="pt" class="active">Eu crio landing pages e websites premium para negocios que precisam parecer mais profissionais, vender com mais clareza e transformar visitantes em pedidos de orcamento.</span>
+            <span data-lang="en">I create premium landing pages and websites for businesses that need to look more professional, explain their offer clearly and turn visitors into quote requests.</span>
+            <span data-lang="fr">Je cree des landing pages et des sites web premium pour les entreprises qui veulent paraitre plus professionnelles, clarifier leur offre et recevoir plus de demandes de soumission.</span>
+          </p>
           <div class="hero-actions">
-            <a class="btn primary" href="#cases">Ver portfolio</a>
-            <a class="btn secondary" href="#servicos">O que eu crio</a>
+            <a class="btn primary" href="#cases">
+              <span data-lang="pt" class="active">Ver portfolio</span>
+              <span data-lang="en">View portfolio</span>
+              <span data-lang="fr">Voir le portfolio</span>
+            </a>
+            <a class="btn secondary" href="#servicos">
+              <span data-lang="pt" class="active">O que eu crio</span>
+              <span data-lang="en">What I build</span>
+              <span data-lang="fr">Ce que je cree</span>
+            </a>
           </div>
         </div>
 
         <aside class="hero-panel">
-          <strong>Design pensado para clientes reais, nao so para ficar bonito.</strong>
-          <p>Cada projeto combina visual, texto, jornada de conversao, WhatsApp, idiomas e uma estrutura simples para o negocio continuar usando depois.</p>
+          <strong>
+            <span data-lang="pt" class="active">Design pensado para clientes reais, nao so para ficar bonito.</span>
+            <span data-lang="en">Design built for real clients, not only to look pretty.</span>
+            <span data-lang="fr">Un design pense pour de vrais clients, pas seulement pour etre joli.</span>
+          </strong>
+          <p>
+            <span data-lang="pt" class="active">Cada projeto combina visual, texto, jornada de conversao, WhatsApp, idiomas e uma estrutura simples para o negocio continuar usando depois.</span>
+            <span data-lang="en">Each project combines visuals, copy, conversion flow, WhatsApp, languages and a simple structure the business can keep using.</span>
+            <span data-lang="fr">Chaque projet combine visuel, texte, parcours de conversion, WhatsApp, langues et une structure simple a utiliser apres la livraison.</span>
+          </p>
           <div class="stats">
             <div class="stat">
-              <b>2</b>
-              <span>cases em destaque</span>
+              <b>3</b>
+              <span>
+                <span data-lang="pt" class="active">cases em destaque</span>
+                <span data-lang="en">featured cases</span>
+                <span data-lang="fr">projets presentes</span>
+              </span>
             </div>
             <div class="stat">
               <b>3</b>
-              <span>idiomas possiveis</span>
+              <span>
+                <span data-lang="pt" class="active">idiomas possiveis</span>
+                <span data-lang="en">possible languages</span>
+                <span data-lang="fr">langues possibles</span>
+              </span>
             </div>
             <div class="stat">
               <b>1:1</b>
-              <span>direcao criativa</span>
+              <span>
+                <span data-lang="pt" class="active">direcao criativa</span>
+                <span data-lang="en">creative direction</span>
+                <span data-lang="fr">direction creative</span>
+              </span>
             </div>
           </div>
         </aside>
@@ -696,10 +799,22 @@
     <section id="cases">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Cases selecionados</p>
-          <h2>Projetos conceito que mostram como uma marca pode se apresentar melhor.</h2>
+          <p class="eyebrow">
+            <span data-lang="pt" class="active">Cases selecionados</span>
+            <span data-lang="en">Selected cases</span>
+            <span data-lang="fr">Projets selectionnes</span>
+          </p>
+          <h2>
+            <span data-lang="pt" class="active">Projetos conceito que mostram como uma marca pode se apresentar melhor.</span>
+            <span data-lang="en">Concept projects that show how a brand can present itself better.</span>
+            <span data-lang="fr">Des projets conceptuels qui montrent comment une marque peut mieux se presenter.</span>
+          </h2>
         </div>
-        <p>Os cases abaixo foram criados para demonstrar direcao visual, estrutura estrategica e experiencia de usuario para diferentes tipos de negocio.</p>
+        <p>
+          <span data-lang="pt" class="active">Cards de portfolio com direcao visual, estrutura estrategica e experiencia de usuario para diferentes tipos de negocio.</span>
+          <span data-lang="en">Portfolio cards with visual direction, strategic structure and user experience for different business types.</span>
+          <span data-lang="fr">Des cartes de portfolio avec direction visuelle, structure strategique et experience utilisateur pour differents types d'entreprises.</span>
+        </p>
       </div>
 
       <div class="case-grid">
@@ -714,10 +829,22 @@
               <span class="pill">PT / EN / FR</span>
             </div>
             <h3>PopGlow Fetes Montreal</h3>
-            <p>Landing page para decoracao de festas com pacotes, extras, WhatsApp, contato e uma estrutura pensada para pedido online de arco de baloes.</p>
+            <p>
+              <span data-lang="pt" class="active">Landing page para decoracao de festas com pacotes, extras, WhatsApp, contato e estrutura pensada para pedido online de arco de baloes.</span>
+              <span data-lang="en">Landing page for party decor with packages, add-ons, WhatsApp, contact details and an online balloon arch order flow.</span>
+              <span data-lang="fr">Landing page pour decoration de fetes avec forfaits, extras, WhatsApp, contact et parcours de commande pour arche de ballons.</span>
+            </p>
             <div class="case-links">
-              <span class="text-link">Festas + servicos locais</span>
-              <a class="text-link" href="https://alvesrafaela.github.io/rafaela-alves/popglow-landing-preview/index.html" target="_blank" rel="noopener">Ver projeto</a>
+              <span class="text-link">
+                <span data-lang="pt" class="active">Festas + servicos locais</span>
+                <span data-lang="en">Events + local services</span>
+                <span data-lang="fr">Fetes + services locaux</span>
+              </span>
+              <a class="text-link" href="https://alvesrafaela.github.io/rafaela-alves/popglow-landing-preview/index.html" target="_blank" rel="noopener">
+                <span data-lang="pt" class="active">Ver projeto</span>
+                <span data-lang="en">View project</span>
+                <span data-lang="fr">Voir le projet</span>
+              </a>
             </div>
           </div>
         </article>
@@ -732,10 +859,22 @@
               <span class="pill">Concept</span>
             </div>
             <h3>Aurora Dental Studio</h3>
-            <p>Website conceito para uma clinica odontologica premium, com foco em confianca, conforto, servicos e agendamento.</p>
+            <p>
+              <span data-lang="pt" class="active">Website conceito para uma clinica odontologica premium, com foco em confianca, conforto, servicos e agendamento.</span>
+              <span data-lang="en">Concept website for a premium dental clinic, focused on trust, comfort, services and appointment requests.</span>
+              <span data-lang="fr">Site conceptuel pour une clinique dentaire premium, axe sur la confiance, le confort, les services et les demandes de rendez-vous.</span>
+            </p>
             <div class="case-links">
-              <span class="text-link">Saude + autoridade</span>
-              <a class="text-link" href=" https://alvesrafaela.github.io/premiumDental/" target="_blank" rel="noopener">Ver projeto</a>
+              <span class="text-link">
+                <span data-lang="pt" class="active">Saude + autoridade</span>
+                <span data-lang="en">Health + authority</span>
+                <span data-lang="fr">Sante + autorite</span>
+              </span>
+              <a class="text-link" href="https://alvesrafaela.github.io/premiumDental/" target="_blank" rel="noopener">
+                <span data-lang="pt" class="active">Ver projeto</span>
+                <span data-lang="en">View project</span>
+                <span data-lang="fr">Voir le projet</span>
+              </a>
             </div>
           </div>
         </article>
@@ -750,10 +889,22 @@
               <span class="pill">Portfolio concept</span>
             </div>
             <h3>Beauty Atelier Concept</h3>
-            <p>Direcao visual para um studio de beleza premium, com foco em servicos, prova social, agenda e percepcao de valor.</p>
+            <p>
+              <span data-lang="pt" class="active">Direcao visual para um studio de beleza premium, com foco em servicos, prova social, agenda e percepcao de valor.</span>
+              <span data-lang="en">Visual direction for a premium beauty studio, focused on services, social proof, booking and perceived value.</span>
+              <span data-lang="fr">Direction visuelle pour un studio de beaute premium, avec services, preuve sociale, prise de rendez-vous et valeur percue.</span>
+            </p>
             <div class="case-links">
-              <span class="text-link">Beleza + agenda</span>
-              <a class="text-link" href="#contato">Em breve</a>
+              <span class="text-link">
+                <span data-lang="pt" class="active">Beleza + agenda</span>
+                <span data-lang="en">Beauty + booking</span>
+                <span data-lang="fr">Beaute + rendez-vous</span>
+              </span>
+              <a class="text-link" href="#contato">
+                <span data-lang="pt" class="active">Em breve</span>
+                <span data-lang="en">Coming soon</span>
+                <span data-lang="fr">Bientot</span>
+              </a>
             </div>
           </div>
         </article>
@@ -763,27 +914,55 @@
     <section id="servicos" class="services">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Servicos</p>
-          <h2>O que eu posso criar para marcas pequenas parecerem maiores.</h2>
+          <p class="eyebrow">
+            <span data-lang="pt" class="active">Servicos</span>
+            <span data-lang="en">Services</span>
+            <span data-lang="fr">Services</span>
+          </p>
+          <h2>
+            <span data-lang="pt" class="active">O que eu posso criar para marcas pequenas parecerem maiores.</span>
+            <span data-lang="en">What I can build so small brands look bigger.</span>
+            <span data-lang="fr">Ce que je peux creer pour aider les petites marques a paraitre plus solides.</span>
+          </h2>
         </div>
-        <p>O foco e entregar uma presenca digital pronta para divulgar, vender e receber contatos com mais confianca.</p>
+        <p>
+          <span data-lang="pt" class="active">O foco e entregar uma presenca digital pronta para divulgar, vender e receber contatos com mais confianca.</span>
+          <span data-lang="en">The goal is to deliver a digital presence ready to promote, sell and receive contacts with more confidence.</span>
+          <span data-lang="fr">L'objectif est de livrer une presence numerique prete a promouvoir, vendre et recevoir des contacts avec confiance.</span>
+        </p>
       </div>
 
       <div class="service-grid">
         <article class="service">
           <span class="service-number">01</span>
           <h3>Landing pages</h3>
-          <p>Paginas de alta conversao para servicos, eventos, negocios locais, listas de espera e ofertas especificas.</p>
+          <p>
+            <span data-lang="pt" class="active">Paginas de alta conversao para servicos, eventos, negocios locais, listas de espera e ofertas especificas.</span>
+            <span data-lang="en">Conversion-focused pages for services, events, local businesses, waitlists and specific offers.</span>
+            <span data-lang="fr">Pages axees sur la conversion pour services, evenements, commerces locaux, listes d'attente et offres precises.</span>
+          </p>
         </article>
         <article class="service">
           <span class="service-number">02</span>
-          <h3>Sites premium</h3>
-          <p>Sites institucionais com visual sofisticado, servicos, portfolio, FAQ, contato e estrutura responsiva.</p>
+          <h3>
+            <span data-lang="pt" class="active">Sites premium</span>
+            <span data-lang="en">Premium websites</span>
+            <span data-lang="fr">Sites premium</span>
+          </h3>
+          <p>
+            <span data-lang="pt" class="active">Sites institucionais com visual sofisticado, servicos, portfolio, FAQ, contato e estrutura responsiva.</span>
+            <span data-lang="en">Brand websites with refined visuals, services, portfolio, FAQ, contact section and responsive structure.</span>
+            <span data-lang="fr">Sites vitrine avec visuel raffine, services, portfolio, FAQ, contact et structure responsive.</span>
+          </p>
         </article>
         <article class="service">
           <span class="service-number">03</span>
           <h3>WordPress + Elementor</h3>
-          <p>Projetos semi-personalizados em WordPress para clientes que querem atualizar fotos, textos e secoes depois.</p>
+          <p>
+            <span data-lang="pt" class="active">Projetos semi-personalizados em WordPress para clientes que querem atualizar fotos, textos e secoes depois.</span>
+            <span data-lang="en">Semi-custom WordPress projects for clients who want to update photos, text and sections later.</span>
+            <span data-lang="fr">Projets WordPress semi-personnalises pour les clients qui veulent modifier photos, textes et sections apres.</span>
+          </p>
         </article>
       </div>
     </section>
@@ -791,31 +970,71 @@
     <section id="processo" class="process">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Metodo</p>
-          <h2>Um processo simples para sair da ideia e chegar no site publicado.</h2>
+          <p class="eyebrow">
+            <span data-lang="pt" class="active">Metodo</span>
+            <span data-lang="en">Method</span>
+            <span data-lang="fr">Methode</span>
+          </p>
+          <h2>
+            <span data-lang="pt" class="active">Um processo simples para sair da ideia e chegar no site publicado.</span>
+            <span data-lang="en">A simple process to go from idea to published website.</span>
+            <span data-lang="fr">Un processus simple pour passer de l'idee au site publie.</span>
+          </h2>
         </div>
       </div>
 
       <div class="process-grid">
         <article class="process-step">
           <span class="service-number">01</span>
-          <h3>Briefing</h3>
-          <p>Entendo objetivo, publico, servicos, fotos, referencias e o que o site precisa fazer pelo negocio.</p>
+          <h3>
+            <span data-lang="pt" class="active">Briefing</span>
+            <span data-lang="en">Briefing</span>
+            <span data-lang="fr">Brief</span>
+          </h3>
+          <p>
+            <span data-lang="pt" class="active">Entendo objetivo, publico, servicos, fotos, referencias e o que o site precisa fazer pelo negocio.</span>
+            <span data-lang="en">I understand the goal, audience, services, photos, references and what the website needs to do for the business.</span>
+            <span data-lang="fr">Je comprends l'objectif, le public, les services, les photos, les references et le role du site pour l'entreprise.</span>
+          </p>
         </article>
         <article class="process-step">
           <span class="service-number">02</span>
-          <h3>Direcao visual</h3>
-          <p>Defino estilo, paleta, seções e caminho de conversao para o cliente entender e entrar em contato.</p>
+          <h3>
+            <span data-lang="pt" class="active">Direcao visual</span>
+            <span data-lang="en">Visual direction</span>
+            <span data-lang="fr">Direction visuelle</span>
+          </h3>
+          <p>
+            <span data-lang="pt" class="active">Defino estilo, paleta, secoes e caminho de conversao para o cliente entender e entrar em contato.</span>
+            <span data-lang="en">I define style, palette, sections and conversion path so the client understands and reaches out.</span>
+            <span data-lang="fr">Je definis le style, la palette, les sections et le parcours pour aider le client a comprendre et contacter.</span>
+          </p>
         </article>
         <article class="process-step">
           <span class="service-number">03</span>
-          <h3>Construcao</h3>
-          <p>Crio a pagina com textos organizados, visual responsivo, links, WhatsApp e estrutura de publicacao.</p>
+          <h3>
+            <span data-lang="pt" class="active">Construcao</span>
+            <span data-lang="en">Build</span>
+            <span data-lang="fr">Creation</span>
+          </h3>
+          <p>
+            <span data-lang="pt" class="active">Crio a pagina com textos organizados, visual responsivo, links, WhatsApp e estrutura de publicacao.</span>
+            <span data-lang="en">I build the page with organized copy, responsive visuals, links, WhatsApp and publishing structure.</span>
+            <span data-lang="fr">Je cree la page avec textes organises, visuel responsive, liens, WhatsApp et structure de publication.</span>
+          </p>
         </article>
         <article class="process-step">
           <span class="service-number">04</span>
-          <h3>Entrega</h3>
-          <p>Publico, reviso no celular e computador, faço ajustes finais e explico como usar ou atualizar.</p>
+          <h3>
+            <span data-lang="pt" class="active">Entrega</span>
+            <span data-lang="en">Delivery</span>
+            <span data-lang="fr">Livraison</span>
+          </h3>
+          <p>
+            <span data-lang="pt" class="active">Publico, reviso no celular e computador, faco ajustes finais e explico como usar ou atualizar.</span>
+            <span data-lang="en">I publish, review on mobile and desktop, make final adjustments and explain how to use or update it.</span>
+            <span data-lang="fr">Je publie, je verifie sur mobile et ordinateur, j'ajuste et j'explique comment utiliser ou modifier le site.</span>
+          </p>
         </article>
       </div>
     </section>
@@ -823,24 +1042,60 @@
     <section class="proof">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Diferencial</p>
-          <h2>Eu nao entrego so uma pagina bonita. Eu organizo a oferta.</h2>
+          <p class="eyebrow">
+            <span data-lang="pt" class="active">Diferencial</span>
+            <span data-lang="en">Difference</span>
+            <span data-lang="fr">Difference</span>
+          </p>
+          <h2>
+            <span data-lang="pt" class="active">Eu nao entrego so uma pagina bonita. Eu organizo a oferta.</span>
+            <span data-lang="en">I do not deliver only a pretty page. I organize the offer.</span>
+            <span data-lang="fr">Je ne livre pas seulement une belle page. J'organise l'offre.</span>
+          </h2>
         </div>
-        <p>Um bom site ajuda a pessoa certa a entender rapidamente o que voce faz, por que confiar e qual o proximo passo.</p>
+        <p>
+          <span data-lang="pt" class="active">Um bom site ajuda a pessoa certa a entender rapidamente o que voce faz, por que confiar e qual o proximo passo.</span>
+          <span data-lang="en">A good website helps the right person quickly understand what you do, why to trust you and what to do next.</span>
+          <span data-lang="fr">Un bon site aide la bonne personne a comprendre vite ce que vous faites, pourquoi vous faire confiance et quoi faire ensuite.</span>
+        </p>
       </div>
 
       <div class="quote-grid">
         <article class="quote">
-          <p>"O visual precisa combinar com o valor que voce quer cobrar. Isso muda a percepcao antes mesmo da conversa."</p>
-          <strong>Direcao de marca</strong>
+          <p>
+            <span data-lang="pt" class="active">"O visual precisa combinar com o valor que voce quer cobrar. Isso muda a percepcao antes mesmo da conversa."</span>
+            <span data-lang="en">"The visual identity needs to match the value you want to charge. It changes perception before the first conversation."</span>
+            <span data-lang="fr">"L'identite visuelle doit correspondre a la valeur que vous voulez demander. Elle change la perception avant meme la premiere conversation."</span>
+          </p>
+          <strong>
+            <span data-lang="pt" class="active">Direcao de marca</span>
+            <span data-lang="en">Brand direction</span>
+            <span data-lang="fr">Direction de marque</span>
+          </strong>
         </article>
         <article class="quote">
-          <p>"Para negocios locais, WhatsApp, Google, galeria e clareza dos pacotes fazem muita diferenca."</p>
-          <strong>Estrategia local</strong>
+          <p>
+            <span data-lang="pt" class="active">"Para negocios locais, WhatsApp, Google, galeria e clareza dos pacotes fazem muita diferenca."</span>
+            <span data-lang="en">"For local businesses, WhatsApp, Google, gallery and clear packages make a real difference."</span>
+            <span data-lang="fr">"Pour les entreprises locales, WhatsApp, Google, galerie et forfaits clairs font une vraie difference."</span>
+          </p>
+          <strong>
+            <span data-lang="pt" class="active">Estrategia local</span>
+            <span data-lang="en">Local strategy</span>
+            <span data-lang="fr">Strategie locale</span>
+          </strong>
         </article>
         <article class="quote">
-          <p>"WordPress com Elementor pode ser uma boa escolha quando o cliente quer atualizar sozinho depois."</p>
-          <strong>Entrega pratica</strong>
+          <p>
+            <span data-lang="pt" class="active">"WordPress com Elementor pode ser uma boa escolha quando o cliente quer atualizar sozinho depois."</span>
+            <span data-lang="en">"WordPress with Elementor can be a good choice when the client wants to update the website later."</span>
+            <span data-lang="fr">"WordPress avec Elementor peut etre un bon choix quand le client veut modifier son site plus tard."</span>
+          </p>
+          <strong>
+            <span data-lang="pt" class="active">Entrega pratica</span>
+            <span data-lang="en">Practical delivery</span>
+            <span data-lang="fr">Livraison pratique</span>
+          </strong>
         </article>
       </div>
     </section>
@@ -849,21 +1104,53 @@
       <div class="faq">
         <div>
           <p class="eyebrow">FAQ</p>
-          <h2>Duvidas comuns antes de comecar.</h2>
-          <p class="case-body p">O projeto pode ser ajustado conforme escopo: pagina simples, WordPress, idiomas, formulario ou pedido online.</p>
+          <h2>
+            <span data-lang="pt" class="active">Duvidas comuns antes de comecar.</span>
+            <span data-lang="en">Common questions before starting.</span>
+            <span data-lang="fr">Questions frequentes avant de commencer.</span>
+          </h2>
+          <p>
+            <span data-lang="pt" class="active">O projeto pode ser ajustado conforme escopo: pagina simples, WordPress, idiomas, formulario ou pedido online.</span>
+            <span data-lang="en">The project can be adjusted by scope: simple page, WordPress, languages, form or online order.</span>
+            <span data-lang="fr">Le projet peut etre ajuste selon le besoin: page simple, WordPress, langues, formulaire ou commande en ligne.</span>
+          </p>
         </div>
         <div class="faq-list">
           <article class="faq-item">
-            <h3>Voce usa template ou faz personalizado?</h3>
-            <p>Posso usar uma base para acelerar, mas adapto estrutura, visual, textos, fotos, cores e fluxo para cada negocio. Chamo isso de semi-personalizado.</p>
+            <h3>
+              <span data-lang="pt" class="active">Voce usa template ou faz personalizado?</span>
+              <span data-lang="en">Do you use templates or custom design?</span>
+              <span data-lang="fr">Utilisez-vous un template ou du personnalise?</span>
+            </h3>
+            <p>
+              <span data-lang="pt" class="active">Posso usar uma base para acelerar, mas adapto estrutura, visual, textos, fotos, cores e fluxo para cada negocio. Chamo isso de semi-personalizado.</span>
+              <span data-lang="en">I can use a base to move faster, but I adapt structure, visuals, copy, photos, colors and flow to each business. I call it semi-custom.</span>
+              <span data-lang="fr">Je peux partir d'une base pour aller plus vite, mais j'adapte la structure, le visuel, les textes, les photos, les couleurs et le parcours. C'est semi-personnalise.</span>
+            </p>
           </article>
           <article class="faq-item">
-            <h3>Da para fazer em Elementor?</h3>
-            <p>Sim. Elementor e uma boa opcao quando o cliente quer editar depois no WordPress sem depender de codigo.</p>
+            <h3>
+              <span data-lang="pt" class="active">Da para fazer em Elementor?</span>
+              <span data-lang="en">Can it be built with Elementor?</span>
+              <span data-lang="fr">Est-ce possible avec Elementor?</span>
+            </h3>
+            <p>
+              <span data-lang="pt" class="active">Sim. Elementor e uma boa opcao quando o cliente quer editar depois no WordPress sem depender de codigo.</span>
+              <span data-lang="en">Yes. Elementor is a good option when the client wants to edit the WordPress website later without code.</span>
+              <span data-lang="fr">Oui. Elementor est une bonne option quand le client veut modifier son site WordPress sans code.</span>
+            </p>
           </article>
           <article class="faq-item">
-            <h3>Da para ter mais de um idioma?</h3>
-            <p>Sim. Posso estruturar paginas em portugues, ingles e frances, dependendo do publico e do conteudo.</p>
+            <h3>
+              <span data-lang="pt" class="active">Da para ter mais de um idioma?</span>
+              <span data-lang="en">Can the website have more than one language?</span>
+              <span data-lang="fr">Le site peut-il avoir plusieurs langues?</span>
+            </h3>
+            <p>
+              <span data-lang="pt" class="active">Sim. Posso estruturar paginas em portugues, ingles e frances do Quebec, dependendo do publico e do conteudo.</span>
+              <span data-lang="en">Yes. I can structure pages in Portuguese, English and Quebec French depending on the audience and content.</span>
+              <span data-lang="fr">Oui. Je peux structurer les pages en portugais, en anglais et en francais quebecois selon le public et le contenu.</span>
+            </p>
           </article>
         </div>
       </div>
@@ -871,23 +1158,66 @@
 
     <section id="contato" class="contact">
       <div>
-        <p class="eyebrow">Contato</p>
-        <h2>Quer um site com cara mais profissional?</h2>
-        <p>Me envie seu tipo de negocio, objetivo do site e referencias visuais. Eu te respondo com o melhor formato: landing page, WordPress, portfolio ou pedido online.</p>
+        <p class="eyebrow">
+          <span data-lang="pt" class="active">Contato</span>
+          <span data-lang="en">Contact</span>
+          <span data-lang="fr">Contact</span>
+        </p>
+        <h2>
+          <span data-lang="pt" class="active">Quer um site com cara mais profissional?</span>
+          <span data-lang="en">Want a website that feels more professional?</span>
+          <span data-lang="fr">Vous voulez un site qui parait plus professionnel?</span>
+        </h2>
+        <p>
+          <span data-lang="pt" class="active">Me envie seu tipo de negocio, objetivo do site e referencias visuais. Eu te respondo com o melhor formato: landing page, WordPress, portfolio ou pedido online.</span>
+          <span data-lang="en">Send me your business type, website goal and visual references. I will suggest the best format: landing page, WordPress, portfolio or online order flow.</span>
+          <span data-lang="fr">Envoyez-moi votre type d'entreprise, l'objectif du site et vos references visuelles. Je vous propose le meilleur format: landing page, WordPress, portfolio ou commande en ligne.</span>
+        </p>
       </div>
       <aside class="contact-card">
-        <strong>Vamos conversar pelo WhatsApp.</strong>
-        <p>A mensagem ja vai pronta para voce me contar o que precisa.</p>
-        <a class="btn primary" href="https://wa.me/14385285274?text=Oi%20Rafaela%2C%20quero%20um%20site%20para%20meu%20negocio.%20Meu%20nicho%20e%3A" target="_blank" rel="noopener">Enviar mensagem</a>
+        <strong>
+          <span data-lang="pt" class="active">Vamos conversar pelo WhatsApp.</span>
+          <span data-lang="en">Let's talk on WhatsApp.</span>
+          <span data-lang="fr">Parlons sur WhatsApp.</span>
+        </strong>
+        <p>
+          <span data-lang="pt" class="active">A mensagem ja vai pronta para voce me contar o que precisa.</span>
+          <span data-lang="en">The message is ready so you can tell me what you need.</span>
+          <span data-lang="fr">Le message est pret pour me dire ce dont vous avez besoin.</span>
+        </p>
+        <a class="btn primary" href="https://wa.me/14385285274?text=Oi%20Rafaela%2C%20quero%20um%20site%20para%20meu%20negocio.%20Meu%20nicho%20e%3A" target="_blank" rel="noopener">
+          <span data-lang="pt" class="active">Enviar mensagem</span>
+          <span data-lang="en">Send message</span>
+          <span data-lang="fr">Envoyer un message</span>
+        </a>
       </aside>
     </section>
   </main>
 
   <footer>
-    <span>Rafaela Alves Studio - Portfolio de websites premium</span>
-    <span>Montreal, Canada | Atendimento online</span>
+    <span>Rafaela Alves Studio - Premium website portfolio</span>
+    <span>Montreal, Canada | Online projects</span>
   </footer>
 
   <a class="whatsapp-float" href="https://wa.me/14385285274?text=Oi%20Rafaela%2C%20quero%20ver%20opcoes%20de%20site" target="_blank" rel="noopener">WhatsApp</a>
+
+  <script>
+    const buttons = document.querySelectorAll("[data-set-lang]");
+    const translatable = document.querySelectorAll("[data-lang]");
+
+    function setLanguage(lang) {
+      document.documentElement.lang = lang === "pt" ? "pt-BR" : lang === "fr" ? "fr-CA" : "en";
+      buttons.forEach((button) => {
+        button.classList.toggle("active", button.dataset.setLang === lang);
+      });
+      translatable.forEach((item) => {
+        item.classList.toggle("active", item.dataset.lang === lang);
+      });
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.setLang));
+    });
+  </script>
 </body>
 </html>
